@@ -8,3 +8,5 @@ Features:
 - Legacy list support and adjustable cutoff
 - Records and points management
 - Secure SQLite database
+
+It is very important you keep data.db in the same folder as the calculator!
