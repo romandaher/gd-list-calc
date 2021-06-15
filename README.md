@@ -10,3 +10,5 @@ Features:
 - Secure SQLite database
 
 It is very important you keep data.db in the same folder as the calculator!
+
+Special thanks to electroanimator for helping me find bugs n shieeeeet
