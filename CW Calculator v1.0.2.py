@@ -10,9 +10,11 @@ calc = True
 
 def add_level(placement, name, creator):
     c.execute('SELECT placement FROM demons ORDER BY placement DESC')
-    lowest_placement = int(c.fetchone()[0])
-    print(lowest_placement)
-    if (lowest_placement - 1) > placement and placement > 0:
+    try:
+        lowest_placement = int(c.fetchone()[0])
+    except:
+        lowest_placement = 0
+    if (lowest_placement + 1) >= placement and placement > 0:
         with conn:
             # moves other levels down
             c.execute(f'''UPDATE demons
@@ -20,12 +22,12 @@ def add_level(placement, name, creator):
                         WHERE placement >= {placement}''')
 
             c.execute(f'''INSERT INTO demons (placement, name, creator)
-                        VALUES ({placement}, "{name}", "{creator}")''')
+                          VALUES ({placement}, "{name}", "{creator}")''')
 
         print(f'{name} by {creator} successfully added!')
 
     else:
-        print('Invalid placement! Please place levels in a valid range.')
+        print('\nInvalid placement! Please place levels in a valid range.')
 
 
 
@@ -212,7 +214,7 @@ def level_records(level_name):
 
 
 print('''Welcome to cluckwork's Demon List Calculator!
-v1.0.2 ''')
+v1.0.3 ''')
 while calc == True:
     option = input('''\n1 - View the demons list
 2 - Stats viewer
