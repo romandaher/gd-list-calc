@@ -1,4 +1,4 @@
-# CW Calculator v1.0.2
+# CW Calculator
 A free to use simple open source calculator for Geometry Dash demonlists
 
 Features:
