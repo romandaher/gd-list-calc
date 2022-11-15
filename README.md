@@ -1,5 +1,5 @@
 # CW Calculator
-A free to use simple open source calculator for Geometry Dash demonlists
+A free to use simple open source calculator for Geometry Dash level lists
 
 Features:
 - Stats viewer
